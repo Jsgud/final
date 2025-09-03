@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ejercicios de Interés Simple - Paso a Paso</title>
+    <style>
+        /* Reset básico */
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f0f4f8;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #004a99;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .exercise {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+        .exercise:hover {
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+        .exercise-header {
+            background: #0056b3;
+            color: white;
+            padding: 15px 20px;
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.2em;
+            border-radius: 10px 10px 0 0;
+        }
+        .exercise-header:hover {
+            background: #003d80;
+        }
+        .exercise-content {
+            padding: 20px;
+            display: none;
+            animation: fadeIn 0.4s ease forwards;
+        }
+        .exercise-content.show {
+            display: block;
+        }
+        .formula {
+            background-color: #e6f0ff;
+            border-left: 6px solid #0056b3;
+            padding: 12px 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.1em;
+            white-space: pre-wrap;
+            border-radius: 5px;
+        }
+        .calculation {
+            margin-left: 20px;
+            font-style: italic;
+            font-size: 1em;
+            line-height: 1.5;
+        }
+        .toggle-icon {
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+        .toggle-icon.rotate {
+            transform: rotate(90deg);
+        }
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        /* Responsive */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .exercise-header {
+                font-size: 1em;
+            }
+            .formula {
+                font-size: 1em;
+            }
+        }
+    </style>
+    <!-- MathJax para renderizar fórmulas LaTeX -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<body>
+    <h1>Ejercicios de Interés Simple - Paso a Paso</h1>
+    <div class="container">
+
+        <div class="exercise">
+            <div class="exercise-header">
+                Ejercicio 1
+                <span class="toggle-icon">&#9654;</span>
+            </div>
+            <div class="exercise-content">
+                <p><strong>Datos:</strong> C = S/ 50,000, i = 8% anual, t = 3 años</p>
+                <div class="formula">
+                    Interés simple: \( I = C \times i \times t \) <br/>
+                    Monto acumulado: \( M = C + I \)
+                </div>
+                <p class="calculation">
+                    \( I = 50,000 \times 0.08 \times 3 = 12,000 \) <br/>
+                    \( M = 50,000 + 12,000 = 62,000 \)
+                </p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <div class="exercise-header">
+                Ejercicio 2
+                <span class="toggle-icon">&#9654;</span>
+            </div>
+            <div class="exercise-content">
+                <p><strong>Datos:</strong> M = S/ 72,000, i = 12% anual, t = 4 años</p>
+                <div class="formula">
+                    \( M = C (1 + i \times t) \implies C = \frac{M}{1 + i \times t} \)
+                </div>
+                <p class="calculation">
+                    \( C = \frac{72,000}{1 + 0.12 \times 4} = \frac{72,000}{1.48} = 48,648.65 \)
+                </p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <div class="exercise-header">
+                Ejercicio 3
+                <span class="toggle-icon">&#9654;</span>
+            </div>
+            <div class="exercise-content">
+                <p><strong>Datos:</strong> C = S/ 30,000, i = 10% anual, M = S/ 39,000</p>
+                <div class="formula">
+                    \( M = C (1 + i \times t) \implies t = \frac{M/C - 1}{i} \)
+                </div>
+                <p class="calculation">
+                    \( t = \frac{39,000/30,000 - 1}{0.10} = \frac{1.3 - 1}{0.10} = 3 \text{ años} \)
+                </p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <div class="exercise-header">
+                Ejercicio 4
+                <span class="toggle-icon">&#9654;</span>
+            </div>
+            <div class="exercise-content">
+                <p><strong>Datos:</strong> C = S/ 80,000, M = S/ 100,800, t = 3 años</p>
+                <div class="formula">
+                    \( M = C (1 + i \times t) \implies i = \frac{M/C - 1}{t} \)
+                </div>
+                <p class="calculation">
+                    \( i = \frac{100,800/80,000 - 1}{3} = \frac{1.26 - 1}{3} = 0.0867 = 8.67\% \)
+                </p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <div class="exercise-header">
+                Ejercicio 5
+                <span class="toggle-icon">&#9654;</span>
+            </div>
+            <div class="exercise-content">
+                <p><strong>Datos:</strong> C = S/ 100,000, M = S/ 120,000, t = 2 años</p>
+                <p><strong>Interés absoluto por periodo (d):</strong></p>
+                <div class="formula">
+                    \( d = \frac{M - C}{t} \)
+                </div>
+                <p class="calculation">
+                    \( d = \frac{120,000 - 100,000}{2} = 10,000 \)
+                </p>
+                <p><strong>Tasa de interés por periodo (i):</strong></p>
+                <div class="formula">
+                    \( i = \frac{d}{C} \)
+                </div>
+                <p class="calculation">
+                    \( i = \frac{10,000}{100,000} = 0.10 = 10\% \)
+                </p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <div class="exercise-header">
+                Ejercicio 6
+                <span class="toggle-icon">&#9654;</span>
+            </div>
+            <div class="exercise-content">
+                <p><strong>Datos:</strong> C = S/ 25,000, i = 6% anual, t = 5 años</p>
+                <p><strong>Interés simple:</strong></p>
+                <div class="formula">
+                    \( I = C \times i \times t \)
+                </div>
+                <p class="calculation">
+                    \( I = 25,000 \times 0.06 \times 5 = 7,500 \)
+                </p>
+                <p><strong>Monto acumulado:</strong></p>
+                <div class="formula">
+                    \( M = C + I \)
+                </div>
+                <p class="calculation">
+                    \( M = 25,000 + 7,500 = 32,500 \)
+                </p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <div class="exercise-header">
+                Ejercicio 7
+                <span class="toggle-icon">&#9654;</span>
+            </div>
+            <div class="exercise-content">
+                <p><strong>Datos:</strong> M = S/ 150,000, i = 9% anual, t = 4 años</p>
+                <div class="formula">
+                    \( C = \frac{M}{1 + i \times t} \)
+                </div>
+                <p class="calculation">
+                    \( C = \frac{150,000}{1 + 0.09 \times 4} = \frac{150,000}{1.36} = 110,294.12 \)
+                </p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <div class="exercise-header">
+                Ejercicio 8
+                <span class="toggle-icon">&#9654;</span>
+            </div>
+            <div class="exercise-content">
+                <p><strong>Datos:</strong> C = S/ 60,000, i = 15% anual, I = S/ 13,500</p>
+                <div class="formula">
+                    \( I = C \times i \times t \implies t = \frac{I}{C \times i} \)
+                </div>
+                <p class="calculation">
+                    \( t = \frac{13,500}{60,000 \times 0.15} = \frac{13,500}{9,000} = 1.5 \text{ años} = 18 \text{ meses} \)
+                </p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <div class="exercise-header">
+                Ejercicio 9
+                <span class="toggle-icon">&#9654;</span>
+            </div>
+            <div class="exercise-content">
+                <p><strong>Datos:</strong> C = S/ 70,000, M = S/ 84,000, t = 2 años</p>
+                <div class="formula">
+                    \( M = C (1 + i \times t) \implies i = \frac{M/C - 1}{t} \)
+                </div>
+                <p class="calculation">
+                    \( i = \frac{84,000/70,000 - 1}{2} = \frac{1.2 - 1}{2} = 0.10 = 10\% \)
+                </p>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <div class="exercise-header">
+                Ejercicio 10
+                <span class="toggle-icon">&#9654;</span>
+            </div>
+            <div class="exercise-content">
+                <p><strong>Datos:</strong> C = S/ 120,000, M = S/ 138,000, t = 3 años</p>
+                <p><strong>Interés absoluto por periodo (d):</strong></p>
+                <div class="formula">
+                    \( d = \frac{M - C}{t} \)
+                </div>
+                <p class="calculation">
+                    \( d = \frac{138,000 - 120,000}{3} = 6,000 \)
+                </p>
+                <p><strong>Tasa de interés por periodo (i):</strong></p>
+                <div class="formula">
+                    \( i = \frac{d}{C} \)
+                </div>
+                <p class="calculation">
+                    \( i = \frac{6,000}{120,000} = 0.05 = 5\% \)
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Funcionalidad para colapsar/expandir ejercicios
+        document.querySelectorAll('.exercise-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('.toggle-icon');
+                if (content.classList.contains('show')) {
+                    content.classList.remove('show');
+                    icon.classList.remove('rotate');
+                } else {
+                    content.classList.add('show');
+                    icon.classList.add('rotate');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
